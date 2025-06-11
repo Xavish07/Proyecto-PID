@@ -1,59 +1,53 @@
-<div class="form-container">
-  <h2>Adicionar categoría de la actividad</h2>
-  
-  <!-- Campo Denominación (obligatorio) -->
-  <div class="form-group">
-    <label for="denomination">Denominación *</label>
-    <input type="text" id="denomination" required>
-  </div>
-  
-  <!-- Selector de Fechas -->
-  <div class="date-group">
-    <div class="form-group">
-      <label for="start-date">Fecha inicio *</label>
-      <input type="date" id="start-date" required value="2024-10-01">
-    </div>
-    
-    <div class="form-group">
-      <label for="end-date">Fecha fin</label>
-      <input type="date" id="end-date">
-    </div>
-  </div>
-  
-  <!-- Selector de Color -->
-  <div class="form-group">
-    <label for="color">Color:</label>
-    <div class="color-picker">
-      <input type="color" id="color" value="#f00000">
-      <span>#f00000</span>
-    </div>
-  </div>
-  
-  <!-- Editor de Descripción -->
-  <div class="form-group">
-    <label for="description">Descripción:</label>
-    <div class="editor-toolbar">
-      <button class="font-btn">Helvetica</button>
-      <button class="format-btn bold">B</button>
-      <button class="format-btn italic">I</button>
-      <button class="comment-btn">💬</button>
-    </div>
-    <textarea id="description"></textarea>
-  </div>
-  
-  <button type="submit" class="submit-btn">Guardar Categoría</button>
-</div>
+📋 Plantilla de Interfaz: Adicionar Categoría de la Actividad
+¡Bienvenido/a a la plantilla de interfaz “Adicionar categoría de la actividad”! Esta plantilla moderna y personalizable está diseñada para facilitar la gestión de categorías en tus proyectos, optimizada para aplicaciones web desarrolladas con Angular y TypeScript.
 
-git clone https://github.com/tuusuario/plantilla-categorias-actividad.git
+🚀 Características principales
+Formulario intuitivo: Campos esenciales como denominación, fecha de inicio y fin, color y descripción.
 
-:root {
-  --primary-color: #f00000; /* Rojo por defecto */
-  --secondary-color: #4a5568;
-  --background-color: #f7fafc;
-  --card-color: #ffffff;
-}
+Selector de color: Elige fácilmente el color que identifique tu categoría.
 
-document.querySelector('.underline-btn').addEventListener('click', () => {
-  document.execCommand('underline', false, null);
-});
+Editor enriquecido: Agrega descripciones con formato (negrita, cursiva, listas y más).
 
+Diseño responsive: Perfecto para cualquier dispositivo.
+
+Accesibilidad: Navegación y controles claros para todos los usuarios.
+
+🖼️ Vista previa
+![Vista previa de la interfaz](https://pplx-res.cloudinary.com/image/private/user_uploads/17481552/74083a8c-a312-4939-94c5-34b80da32720/Adicionar_C ⚙️ ¿Cómo usar esta plantilla?
+
+Clona el repositorio:
+
+bash
+git clone https://github.com/tuusuario/tu-repo.git
+Instala las dependencias:
+
+bash
+npm install
+Ejecuta la aplicación:
+
+bash
+ng serve
+Personaliza los campos y estilos según tus necesidades.
+
+✨ Personalización
+Cambia los colores y fuentes desde el archivo de estilos.
+
+Agrega o elimina campos fácilmente en el componente.
+
+Integra con tu backend para guardar las categorías.
+
+🛠️ Tecnologías utilizadas
+Angular
+
+TypeScript
+
+CSS3 
+
+HTML5
+
+🤝 Contribuciones
+¡Las contribuciones son bienvenidas! Si tienes ideas para mejorar la plantilla, no dudes en hacer un fork y enviar tu pull request.
+
+“Haz la gestión de tus actividades más simple y elegante con esta plantilla lista para usar.”
+
+¿Te gusta el proyecto? ¡Dale una estrella ⭐ y compártelo!
