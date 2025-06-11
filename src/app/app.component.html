@@ -1,0 +1,75 @@
+<router-outlet></router-outlet>
+<div class="modal-header bg-purple text-white">
+  <h5 class="modal-title">Adicionar categoría de la actividad</h5>
+</div>
+<form [formGroup]="categoryForm" (ngSubmit)="onSubmit()" novalidate>
+  <div class="modal-body">
+    <div class="form-group">
+      <label for="denomination">Denominación <span class="text-danger">*</span></label>
+      <input type="text" id="denomination" class="form-control" formControlName="denomination"
+        [ngClass]="{'is-invalid': submitted && f['denomination'].invalid}" />
+      <div *ngIf="submitted && f['denomination'].errors" class="invalid-feedback">
+        <div *ngIf="f['denomination'].errors['required']">La denominación es obligatoria.</div>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="startDate">Fecha inicio <span class="text-danger">*</span></label>
+        <input type="date" id="startDate" class="form-control" formControlName="startDate"
+          [ngClass]="{'is-invalid': submitted && f['startDate'].invalid}" />
+        <div *ngIf="submitted && f['startDate'].errors" class="invalid-feedback">
+          <div *ngIf="f['startDate'].errors['required']">La fecha de inicio es obligatoria.</div>
+        </div>
+        <div *ngIf="submitted && f['startDate'].errors" class="invalid-feedback">
+          <div *ngIf="f['startDate'].errors['required']">La fecha de inicio es obligatoria.</div>
+          <div *ngIf="f['startDate'].errors['minDateToday']">La fecha de inicio no puede ser menor a hoy.</div>
+        </div>
+      </div>
+      <div class="form-group col-md-6">
+        <label for="endDate">Fecha fin</label>
+        <input type="date" id="endDate" class="form-control" formControlName="endDate"
+          [ngClass]="{'is-invalid': submitted && f['endDate'].invalid}" />
+        <div *ngIf="submitted && f['endDate'].errors" class="invalid-feedback">
+          <div *ngIf="f['endDate'].errors['dateOrder']">La fecha fin debe ser posterior a la fecha inicio.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="color">Color:</label>
+      <input type="color" id="color" class="form-control form-control-color" formControlName="color" />
+    </div>
+
+    <div class="form-group">
+      <label for="description">Descripción:</label>
+      <div class="input-group">
+        <select class="custom-select" formControlName="fontFamily" style="max-width: 120px;">
+          <option value="Helvetica">Helvetica</option>
+          <option value="Arial">Arial</option>
+          <option value="Times New Roman">Times New Roman</option>
+          <option value="Courier New">Courier New</option>
+        </select>
+        <div class="input-group-append">
+          <button type="button" class="btn btn-light" (click)="toggleBold()" [class.active]="isBold"><b>B</b></button>
+          <button type="button" class="btn btn-light" (click)="toggleItalic()"
+            [class.active]="isItalic"><i>I</i></button>
+        </div>
+      </div>
+      <textarea id="description" rows="4" class="form-control mt-2" formControlName="description"
+        [ngStyle]="{'font-family': f['fontFamily'].value, 'font-weight': isBold ? 'bold' : 'normal', 'font-style': isItalic ? 'italic' : 'normal'}">
+      </textarea>
+    </div>
+  </div>
+  <div class="modal-footer d-flex justify-content-end">
+    <button type="button" class="btn btn-secondary mr-2" (click)="onCancel()">
+      <i class="fa fa-times"></i> Cancelar
+    </button>
+    <button type="button" class="btn btn-primary mr-2" (click)="onApply()">
+      <i class="fa fa-check"></i> Aplicar
+    </button>
+    <button type="submit" class="btn btn-success">
+      <i class="fa fa-save"></i> Aceptar
+    </button>
+  </div>
+</form>
