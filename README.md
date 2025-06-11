@@ -44,10 +44,16 @@
   <button type="submit" class="submit-btn">Guardar Categoría</button>
 </div>
 
+git clone https://github.com/tuusuario/plantilla-categorias-actividad.git
+
 :root {
   --primary-color: #f00000; /* Rojo por defecto */
   --secondary-color: #4a5568;
   --background-color: #f7fafc;
   --card-color: #ffffff;
 }
+
+document.querySelector('.underline-btn').addEventListener('click', () => {
+  document.execCommand('underline', false, null);
+});
 
